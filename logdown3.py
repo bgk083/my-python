@@ -13,7 +13,7 @@ name=[] #日志名字
 url=[]  #日志地址
 pubdate=[] #发日志时间
 i=1
-j=1
+j=0
 
 con=urllib.urlopen(html).read()
 
@@ -53,7 +53,7 @@ if url[0]!='':
         print'Find end!\nThis page contains '+str(i-1)+' logs\n\n'
 
 while j<i:
-    print 'Opening',name[j],':',url[j]
+    print 'Opening',name[j].decode('utf-8'),':',url[j]
     web.open_new_tab(url[j])  
     time.sleep(5) 
     j+=1
